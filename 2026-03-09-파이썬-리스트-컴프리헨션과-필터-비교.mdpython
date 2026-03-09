@@ -1,0 +1,20 @@
+### Context
+파이썬에서 리스트 컴프리헨션(list comprehension)은 간단히 리스트를 생성할 수 있는 강력한 방법입니다. 하지만 조건문이 여러 개 들어가면 코드의 가독성이 떨어질 수 있습니다. 반대로, 비전공자에게는 필터(filter) 함수가 더 읽기 쉬울 수 있지만 대량의 데이터를 처리할 때 성능 차이가 발생할 수 있습니다.
+
+### Core
+아래는 리스트 컴프리헨션과 필터 함수의 사용 예시입니다:
+
+```python
+# 리스트 컴프리헨션을 사용한 예시
+filtered_list_comprehension = [x for x in my_list if condition1(x) and condition2(x)]
+
+# 필터 함수를 사용한 예시
+filtered_list_filter = list(filter(lambda x: condition1(x) and condition2(x), my_list))
+```
+
+두 방법 모두 조건문을 이용해 필터링하는 작업을 수행할 수 있습니다.
+
+### Insight
+리스트 컴프리헨션은 일반적으로 가독성이 높지만, 다수의 조건문을 포함할 때는 복잡해질 수 있습니다. 필터 함수는 람다(lambda)와 함께 사용하여 읽기 쉽게 만들 수 있지만, 일부 경우 성능이 저하될 수 있습니다. 일반적으로 소량의 데이터에서는 가독성이 우선되는 필터를, 대량의 데이터 처리에서는 성능상 이점이 있는 리스트 컴프리헨션을 추천합니다.
+
+**출처:** [Python List Comprehension vs Filter Performance](https://stackoverflow.com/questions/3013449/list-comprehension-vs-lambda-filter)
